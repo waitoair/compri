@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_140908) do
+ActiveRecord::Schema.define(version: 2021_06_08_145246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "author"
+    t.string "language"
+    t.float "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.string "store"
+    t.float "price"
+    t.bigint "book_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_deals_on_book_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +46,17 @@ ActiveRecord::Schema.define(version: 2021_06_08_140908) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "watch_lists", force: :cascade do |t|
+    t.float "price"
+    t.bigint "book_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_watch_lists_on_book_id"
+    t.index ["user_id"], name: "index_watch_lists_on_user_id"
+  end
+
+  add_foreign_key "deals", "books"
+  add_foreign_key "watch_lists", "books"
+  add_foreign_key "watch_lists", "users"
 end
