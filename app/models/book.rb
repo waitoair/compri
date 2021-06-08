@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
-  # belongs_to :watch_list
+  has_many :watch_lists
   has_many :deals
+  has_many :users, through: :watch_list
 end
