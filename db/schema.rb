@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_145246) do
+ActiveRecord::Schema.define(version: 2021_06_08_194015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_06_08_145246) do
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
+    t.text "description"
   end
 
   create_table "deals", force: :cascade do |t|
@@ -47,15 +49,16 @@ ActiveRecord::Schema.define(version: 2021_06_08_145246) do
   end
 
   create_table "watch_lists", force: :cascade do |t|
-    t.float "price"
     t.bigint "book_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "target_price"
     t.index ["book_id"], name: "index_watch_lists_on_book_id"
     t.index ["user_id"], name: "index_watch_lists_on_user_id"
   end
 
   add_foreign_key "deals", "books"
+  add_foreign_key "watch_lists", "books"
   add_foreign_key "watch_lists", "users"
 end

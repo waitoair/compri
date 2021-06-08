@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :watch_list
+  has_one :watch_list
+  has_many :books, through: :watch_list
 end
