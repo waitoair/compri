@@ -57,6 +57,5 @@ ActiveRecord::Schema.define(version: 2021_06_08_145246) do
   end
 
   add_foreign_key "deals", "books"
-  add_foreign_key "watch_lists", "books"
   add_foreign_key "watch_lists", "users"
 end
