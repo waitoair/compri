@@ -1,5 +1,4 @@
 puts "Creating..."
-watchlistcontroller
 Book.destroy_all
 
 User.create!(email:"teste@teste.com", password: "123456")
@@ -19,21 +18,6 @@ end
 
 puts "Finish!"
 
-# require 'open-uri'
-# require 'nokogiri'
-
-# puts "Cleaning database..."
-# Book.destroy_all
-
-Deal.destroy_all
- master
-
-Deal.create(store: 'leitura', price: 46.45, book_id: 1)
-Deal.create(store: 'travessa', price: 52.45, book_id: 2)
-Deal.create(store: 'cultura', price: 54.45, book_id: 3)
-Deal.create(store: 'amazon', price: 51.45, book_id: 4)
-
-puts "Finish!"
 
 # require 'open-uri'
 # require 'nokogiri'
