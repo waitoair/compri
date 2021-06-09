@@ -1,0 +1,11 @@
+<div class="container">
+
+<h1 >Deals Index</h1>
+
+<% @deals.each do |deal| %>
+  <p><%= deal.book.title %></p>
+  <p><%= deal.book.price %></p>
+  <p><%= deal.store %></p>
+  <p>Your target price: <%= deal.price %></p>
+<% end %>
+</div>
