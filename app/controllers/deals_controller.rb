@@ -1,6 +1,6 @@
 class DealsController < ApplicationController
 
   def index
-    @deals = Deal.all
+    @deals = Deal.includes(:book)
   end
 end
