@@ -7,6 +7,5 @@ class User < ApplicationRecord
   has_one :watch_list
   has_many :books, through: :watch_list
 
-  validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 end
