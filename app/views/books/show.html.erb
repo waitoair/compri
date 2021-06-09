@@ -1,8 +1,18 @@
 <div class="container book-form">
   <h1> <%= @book.title %> </h1>
-  <p> category: <%= @book.category %> </p>
-  <p> rating: <%= @book.rating %> </p>
   <p> language: <%= @book.language %> </p>
   <p> author: <%= @book.author %> </p>
+  
+  <% if current_user && current_user.watch_lists.where(book: @book).empty? || !current_user %> 
+    <%= simple_form_for [@book, @watch_list] do |f| %>
+      <%= f.input :target_price %>
+      <%= f.submit "add to list", class:"btn btn-success"%>
+    <% end %>
+  <% end %>
+</div>
 
+<div class="container">
+  <% @book.deals.order(:price).each do |deal| %>
+    <p><%= "At #{deal.store} - for $ #{deal.price}" %> </p> <hr>
+  <% end %>
 </div>

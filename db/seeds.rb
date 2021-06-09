@@ -1,10 +1,20 @@
 puts "Creating..."
 Book.destroy_all
 
+User.create!(email:"teste@teste.com", password: "123456")
+
+store_names = ["amazon", "saraiva", "cultura", "leitura", "travessa", "submarino", "americanas"]
+
 Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese")
 Book.create!(title:"O Ladrão De Casaca", author: "Arsène Lupin", language:"Portuguese")
 Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese")
 Book.create!(title: "Drácula - Edição De Luxo", author: "Bram Stoker", language: "Portguese")
+
+Book.all.each do |book|
+  rand(3..7).times do 
+    Deal.create!(store: store_names.sample, book: book, price: rand(14.9..62.5).round(2) )
+  end
+end
 
 puts "Finish!"
 
