@@ -6,22 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Creating..."
-Book.destroy_all
+# puts "Creating..."
+# Book.destroy_all
 
-Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese", rating: 2, category: " horror")
-Book.create!(title:"O Ladrão De Casaca", author: "Arsène Lupin", language:"Portuguese", rating: 5, category: "thriller")
-Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese", rating: 5, category: "romance")
-Book.create!(title: "Drácula - Edição De Luxo", author: "Bram Stoker", language: "Portguese", rating: 4, category: "horror")
+# Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese", rating: 2, category: " horror")
+# Book.create!(title:"O Ladrão De Casaca", author: "Arsène Lupin", language:"Portuguese", rating: 5, category: "thriller")
+# Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese", rating: 5, category: "romance")
+# Book.create!(title: "Drácula - Edição De Luxo", author: "Bram Stoker", language: "Portguese", rating: 4, category: "horror")
 
-puts "Finish!"
+# puts "Finish!"
 
 require 'open-uri'
 require 'nokogiri'
 
-url = 'http://books.toscrape.com/index.html'
-url = 'https://www.amazon.com.br/ref=nav_logo'
+url_show = 'http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html'
+html_file_show = URI.open(url_show).read
+html_doc_show = Nokogiri::HTML(html_file_show)
 
+url = 'http://books.toscrape.com/index.html'
 html_file = URI.open(url).read
 html_doc = Nokogiri::HTML(html_file)
 
@@ -33,11 +35,6 @@ html_doc.search('.product_pod .product_price .price_color').to_a.each do |elemen
   price = element.text
 end
 
-# p html_doc.search('.container-fluid .page_inner .breadcrumb li a').to_a
-  # category = element.text
-  # puts category
-# end
-
 # html_doc.search('.celwidget .a-section a-spacing-micro bylineHidden feature .author notFaded .a-declarative .a-link-normal contributorNameID').class
 #   author = element.text
 #   puts author
@@ -47,11 +44,6 @@ end
 #   language = element.text
 #   puts language
 # end
-
-html_doc.search('.product_page p').to_a.each do |element|
-  description = element.text
-  puts description
-end
 
 # 20.times do
 #   Book.new(
