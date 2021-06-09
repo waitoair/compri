@@ -1,0 +1,35 @@
+.footer {
+  background: #65B1CD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 125px;
+  padding: 20px;
+  line-height: 33px;
+  color:#000; 
+  margin-top: 15px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+  
+}
+.footer-links a:hover {
+  font-size: 30px;
+}
+.footer .fa-heart {
+  color: #dbc9c9;
+}
+
+.footer p{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
