@@ -1,58 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Creating..."
+Book.destroy_all
 
-# puts "Creating..."
+Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese")
+Book.create!(title:"O Ladrão De Casaca", author: "Arsène Lupin", language:"Portuguese")
+Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese")
+Book.create!(title: "Drácula - Edição De Luxo", author: "Bram Stoker", language: "Portguese")
+
+puts "Finish!"
+
+# require 'open-uri'
+# require 'nokogiri'
+
+# puts "Cleaning database..."
 # Book.destroy_all
+# puts "Database cleaned"
 
-# Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese", rating: 2, category: " horror")
-# Book.create!(title:"O Ladrão De Casaca", author: "Arsène Lupin", language:"Portuguese", rating: 5, category: "thriller")
-# Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese", rating: 5, category: "romance")
-# Book.create!(title: "Drácula - Edição De Luxo", author: "Bram Stoker", language: "Portguese", rating: 4, category: "horror")
+# url = 'http://books.toscrape.com/index.html'
+# html_file = URI.open(url).read
+# html_doc = Nokogiri::HTML(html_file)
 
-# puts "Finish!"
+# authors = ['Shel Silverstein', 'Sarah Waters','Michel Houellebecq', 'Gillian Flynn' 'Yuval Harari', 'IMA J. PASTULA PhD', 'Don Raskin', 'Karen J. Hicks', 'Daniel James Brown', 'Aracelis Girmay', 'Janine Mendenhall', 'Katherine Duncan-Jones', 'Hina Belitz', 'Bryan Lee O malley', 'Siimon Reynolds', 'Michael Azerrad', 'Tyehimba Jess', 'Edgar Allan Poe', 'Todd Seavey', 'S. Bedford']
+# prices = []
+# titles = []
 
-require 'open-uri'
-require 'nokogiri'
-
-url_show = 'http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html'
-html_file_show = URI.open(url_show).read
-html_doc_show = Nokogiri::HTML(html_file_show)
-
-url = 'http://books.toscrape.com/index.html'
-html_file = URI.open(url).read
-html_doc = Nokogiri::HTML(html_file)
-
-html_doc.search('.product_pod h3 a').to_a.each do |element|
-  title = element.attribute('title')
-end
-
-html_doc.search('.product_pod .product_price .price_color').to_a.each do |element|
-  price = element.text
-end
-
-# html_doc.search('.celwidget .a-section a-spacing-micro bylineHidden feature .author notFaded .a-declarative .a-link-normal contributorNameID').class
-#   author = element.text
-#   puts author
+# html_doc.search('.product_pod h3 a').to_a.each do |element|
+#   title = element.attribute('title').value
+#   titles << title
 # end
 
-# html_doc.search('.detailBullets_feature_div .a-unordered-list a-nostyle a-vertical a-spacing-none detail-bullet-list .a-list-item .a-text-bold').to_a.each do |element|
-#   language = element.text
-#   puts language
+# html_doc.search('.product_pod .product_price .price_color').to_a.each do |element|
+#   price = element.text.delete('£').to_f
+#   prices << price
 # end
 
 # 20.times do
-#   Book.new(
-#     title: title,
-#     category: category,
-#     rating: rating,
+#   book = Book.create!(
+#     title: titles.each { |title| title },
 #     language: 'english',
-#     price: price, # o unico valor diferente
-#     author: author,
-#     description: description
+#     price: 10.04, # o unico valor diferente
+#     author: authors.each { |author| author },
 #     )
+#     puts "book #{book.id} is created."
 # end
