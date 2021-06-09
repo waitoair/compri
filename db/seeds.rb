@@ -19,7 +19,6 @@ end
 puts "Finish!"
 
 
-
 # require 'open-uri'
 # require 'nokogiri'
 # puts "Cleaning database..."
