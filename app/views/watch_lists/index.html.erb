@@ -1,0 +1,7 @@
+
+  <% @watch_lists.each do |watch_list| %>
+<ul>
+    <li><%= watch_list.book.title %></li>
+    <%= link_to  "Delete", watch_list_path(watch_list), method: :delete %>
+</ul>
+  <% end %>
