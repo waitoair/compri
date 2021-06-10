@@ -1,0 +1,59 @@
+.geral-form{
+  display: flex;
+  justify-content: center;
+}
+
+.form-login {
+  margin: 50px;
+  padding: 35px;
+  border-radius: 4px;
+  background-color:rgba($color: #00916E, $alpha: 1) ;
+  box-shadow: 0 0 1em #00916E;
+}
+
+.form-login h2{
+  font-family: 'Staatliches', cursive;
+  margin-top: 15px;
+  color:#FFFCE8;
+}
+
+.form-inputs{
+  width: 300px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: bold;
+  color:#FFFCE8;
+}
+
+.btn-log{
+  border-radius: 5px;
+  background-color: #FFFCE8;
+  color: #00916E;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom:5px;
+}
+
+.btn-log:hover{
+  color: black;
+}
+
+.btn-sign{
+  background-color:#DE541E;
+  margin-bottom: 5px;
+  color: #FFFCE8;
+  border-radius: 5px;
+}
+
+.btn-sign:hover{
+  text-decoration: none;
+  color:black;
+}
+
+.forgot{
+  color:#FFFCE8;
+  text-decoration: none;
+}
+.forgot:hover{
+  text-decoration: none;
+  color: black;
+}
