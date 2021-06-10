@@ -3,7 +3,7 @@ puts "Creating..."
 User.destroy_all
 Deal.destroy_all
 Book.destroy_all
-
+# testing
 User.create!(email:"teste4@teste.com", password: "123456")
 
 store_names = ["amazon", "saraiva", "cultura", "leitura", "travessa", "submarino", "americanas"]
