@@ -1,0 +1,73 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Staatliches', cursive;
+}
+
+.banner p {
+  font-size: 30px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Caveat', cursive;
+}
+
+.fa-book {
+  font-size: 30px;
+}
+
+.flag {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.flag-title{
+  font-size: 35px;
+  text-align: center;
+  font-family: 'Staatliches', cursive;
+  color: #2B2D42;
+}
+
+body{
+  background-color:#FFFCE8;
+}
+
+form{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-red {
+  border-radius: 5px;
+  background-color: #A22522;
+  color: #FFFCE8;
+  font-family: 'Open Sans', sans-serif;
+}
+.btn-red:hover{
+  background-color:#FFFCE8;
+  color: #A22522;
+  transition: 1s;
+}
+
+.flag a:hover{
+  img{
+    opacity: 0.5;
+    
+  }
+}

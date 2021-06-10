@@ -9,14 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Open+Sans:wght@300&family=Staatliches&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div style="height:100vh">
+      <%= render 'shared/flashes' %>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
