@@ -10,6 +10,14 @@
 </div>
 
 <div class="container">
+more-books-on-seeds
+  <div class="cards">
+    <h1>Books</h1>
+      <% @books.each do |book| %>
+        <li><%= link_to book.title, book_path(book) %></li>
+        <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill if book.photo.attached? %>
+     <% end %>
+
   <p class="flag-title">Book language</p>
   <div class="flag">
     <a href="#" class="es"> <%=image_tag "spain.png", size:"90"  %></a>
