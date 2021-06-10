@@ -1,17 +1,44 @@
-<div class="container book-form">
-  <h1> <%= @book.title %> </h1>
-  <p> language: <%= @book.language %> </p>
-  <p> author: <%= @book.author %> </p>
-  <% if current_user && current_user.watch_lists.where(book: @book).empty? || !current_user %> 
-    <%= simple_form_for [@book, @watch_list] do |f| %>
-      <%= f.input :target_price %>
-      <%= f.submit "add to list", class:"btn btn-success"%>
-    <% end %>
-  <% end %>
+<div class="container book-form my-5">
+  <div class="card" style="max-width: 100wh;">
+    <div class="row g-0">
+      <div class="col-md-3">
+        <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1595267793l/54614052.jpg" />
+      </div>
+
+      <div class="col-md-6 px-5">
+        <div class="card-body">
+          <h5 class="card-title"> <%= @book.title %> </h5>
+          <p class="card-text"> language: <%= @book.language %> </p>
+          <p class="card-text"> author: <%= @book.author %> </p>
+        </div>
+      </div>
+
+      <div class="col-md-3 px-5 my-5">
+      <% if current_user && current_user.watch_lists.where(book: @book).empty? || !current_user %>
+          <%= simple_form_for [@book, @watch_list] do |f| %>
+            <%= f.input :target_price, id:"target_form" %>
+            <%= f.submit "add to list s2", class:"btn btn-success"%>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="container">
+<div class="container my-5 ">
   <% @book.deals.order(:price).each do |deal| %>
-    <p><%= "At #{deal.store} - for $ #{deal.price}" %> </p> <hr>
+  <div class="card-product row">
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1595267793l/54614052.jpg" class="col-md-2" />
+    <img src="http://gsobmidia.com.br/uploads/lojas/1289/americanas_1604512856.png" class="col-md-2">
+<!------- TEXTO DO CARD ------>
+    <div class="card-product-infos col-md-4 ">
+      <h4> <%= "$ #{deal.price}" %> </h4>
+      <p><%= "#{deal.store}"%></p>
+    </div>
+    <!------ BOTÃO ------->
+    <div class="col-md-2 d-flex align-center my-5 ml-auto">
+      <%= link_to "Store", root_path, class: "btn btn-success ", style: "text-decoration: none;" %>
+    </div>
+  </div>
   <% end %>
 </div>
