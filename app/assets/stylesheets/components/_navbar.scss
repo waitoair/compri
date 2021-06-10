@@ -1,12 +1,32 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #006D77;
-}
+  background: #A22522;
+  margin: 0;
+ }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-brand {
   width: 40px;
+  color: #FFFCE8;
+  font-family: 'Staatliches', cursive;
+  font-size: 40px;
+}
+
+.nav-link{
+  color: #FFFCE8;
+  font-family: 'Staatliches', cursive;
+  font-size: 20px;
+}
+
+.navbar-brand:hover{
+  opacity: 0.8;
+  color: #FFFCE8;
+}
+
+.nav-link:hover{
+  opacity: 0.8;
+  color: #FFFCE8;
 }
