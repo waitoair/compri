@@ -3,13 +3,19 @@
   <div class="container">
     <h1>Best prices</h1>
     <p>Your favorite book at the best stores at the lowest price.</p>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2 col-8" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-red my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</div>
 
+  <div class="container">
+    <%=form_tag root_path, method: :get, class: "form-inline col-8" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0" %>
+    <% end %>
+  </div>
+
+ 
 <div class="container">
   <p class="flag-title">Book language</p>
   <div class="flag">
@@ -19,6 +25,7 @@
     <%= link_to image_tag("france.png", size:"90"), root_path(language: "Francês") %>
   </div>
 </div>
+
 
   <div class="container">
     <div class="cards d-flex flex-row flex-wrap">
