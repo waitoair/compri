@@ -3,10 +3,12 @@ puts "Creating..."
 User.destroy_all
 Deal.destroy_all
 Book.destroy_all
-# testing
-User.create!(email:"teste4@teste.com", password: "123456")
+
+User.create!(email:"teste@teste.com", password: "123456")
 
 store_names = ["Amazon", "Saraiva", "Cultura", "Livraria Travessa", "Submarino", "Lojas Americanas"]
+store_images = ["https://res.cloudinary.com/laralprb/image/upload/v1623421203/compri_mao/amazon.png", "https://logospng.org/download/saraiva/logo-saraiva-512.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421239/compri_mao/livraria_cultura.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421222/compri_mao/travessa.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421266/compri_mao/submarinos.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421189/compri_mao/americanas.png"]
+
 
 book_1 = Book.create!(title: "O morro dos ventos uivantes", author: "Emily Bronte", language: "Portuguese", description: "Único romance da escritora inglesa Emily Bronte, O morro dos ventos uivantes retrata uma trágica historia de amor e obsessão em que os personagens principais são a obstinada e geniosa Catherine Earnshaw e seu irmão adotivo, Heathcliff. Grosseiro, humilhado e rejeitado, ele guarda apenas rancor no coração, mas tem com Catherine um relaciona- mento marcado por amor e, ao mesmo tempo, ódio. Essa ligação perdura mesmo com o casamento de Catherine com Edgar Linton.")
 file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/compri_mao/book1.jpg')
@@ -133,8 +135,14 @@ book_22.photo.attach(io: file_22, filename: 'book22.jpg', content_type: 'image/j
 
 
 Book.all.each do |book|
-  rand(3..7).times do 
-    Deal.create!(store: store_names.sample, book: book, price: rand(14.9..62.5).round(2) )
+  rand(3..7).times do
+    index = rand(0..store_names.count - 1)
+    store = store_names[index]
+    image = store_images[index]
+    deal = Deal.create!(store: store, book: book, price: rand(14.9..62.5).round(2) )
+    puts "criado o deal para a store #{store}"
+    file = URI.open(image)
+    deal.photo.attach(io: file, filename: "#{store}.jpg", content_type: 'image/jpg')
   end
 end
 
