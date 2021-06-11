@@ -6,7 +6,7 @@ Book.destroy_all
 # testing
 User.create!(email:"teste4@teste.com", password: "123456")
 
-store_names = ["amazon", "saraiva", "cultura", "leitura", "travessa", "submarino", "americanas"]
+store_names = ["Amazon", "Saraiva", "Cultura", "Livraria Travessa", "Submarino", "Lojas Americanas"]
 
 book_1 = Book.create!(title: "O morro dos ventos uivantes", author: "Emily Bronte", language: "Portuguese", description: "Único romance da escritora inglesa Emily Bronte, O morro dos ventos uivantes retrata uma trágica historia de amor e obsessão em que os personagens principais são a obstinada e geniosa Catherine Earnshaw e seu irmão adotivo, Heathcliff. Grosseiro, humilhado e rejeitado, ele guarda apenas rancor no coração, mas tem com Catherine um relaciona- mento marcado por amor e, ao mesmo tempo, ódio. Essa ligação perdura mesmo com o casamento de Catherine com Edgar Linton.")
 file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/compri_mao/book1.jpg')
