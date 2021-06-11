@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1544716278-e513176f20b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);">
   <div class="container">
     <h1>Best prices</h1>
     <p>Your favorite book at the best stores at the lowest price.</p>
@@ -12,11 +12,12 @@
 <div class="container">
 
   <div class="cards">
-    <h1>Books</h1>
-      <% @books.each do |book| %>
-        <li><%= link_to book.title, book_path(book) %></li>
-        <%= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill if book.photo.attached? %>
-     <% end %>
+    <h1>Books</h1> %>
+      <%# @books.each do |book| %>
+        <%# <li></li> %>
+        <%#= link_to book.title, book_path(book) %>
+        <%#= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill if book.photo.attached? %>
+     <%# end %>
 
   <p class="flag-title">Book language</p>
   <div class="flag">
@@ -27,12 +28,3 @@
   </div>
 </div>
 
-<%# <div class="container">
-  <div class="cards">
-    <h1>Books</h1> %>
-      <%# @books.each do |book| %>
-        <%# <li></li> %>
-        <%#= link_to book.title, book_path(book) %>
-     <%# end %>
-  <%# </div>
-</div> %>
