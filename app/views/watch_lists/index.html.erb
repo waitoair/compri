@@ -1,7 +1,11 @@
-
-  <% @watch_lists.each do |watch_list| %>
-<ul>
-    <li><%= watch_list.book.title %></li>
-    <%= link_to  "Delete", watch_list_path(watch_list), method: :delete %>
-</ul>
-  <% end %>
+<div class="container">
+  <div class="card mt-5" style="width: 18rem;">
+    <ul class="list-grouplist p-4">
+      <% @watch_lists.each do |watch_list| %>
+      <ul class="pb-3">
+          <li style="font-family: 'Staatliches', cursive; font-size: 25px;"><%= watch_list.book.title %></li>
+          <%= link_to  "Delete", watch_list_path(watch_list), method: :delete, class:"btn btn-red" %>
+      </ul>
+      <% end %>
+  </div>
+</div>
