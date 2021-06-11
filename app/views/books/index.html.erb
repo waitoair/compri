@@ -1,29 +1,32 @@
+ 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);">
   <div class="container">
     <h1>Best prices</h1>
     <p>Your favorite book at the best stores at the lowest price.</p>
     <form class="form-inline">
       <input class="form-control mr-sm-2 col-8" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-red my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-red my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </div>
 
-<%# <div class="container">
-  <div class="cards">
-    <h1>Books</h1> %>
-      <%# @books.each do |book| %>
-        <%# <li></li> %>
-        <%#= link_to book.title, book_path(book) %>
-        <%#= cl_image_tag book.photo.key, height: 300, width: 400, crop: :fill if book.photo.attached? %>
-     <%# end %>
-
+<div class="container">
   <p class="flag-title">Book language</p>
   <div class="flag">
-    <a href="#" class="es"> <%=image_tag "spain.png", size:"90"  %></a>
-    <a href="#" class="pt"><%=image_tag "brazil.png", size:"90"  %></a>
-    <a href="#" class="en"><%=image_tag "united-states.png", size:"90"  %></a>
-    <a href="#" class="fr"><%=image_tag "france.png", size:"90"  %></a>
+    <%= link_to image_tag("spain.png", size:"90"), root_path(language: "Español") %>
+    <%= link_to image_tag("brazil.png", size:"90"), root_path(language: "Portuguese") %>
+    <%= link_to image_tag("united-states.png", size:"90"), root_path(language: "English") %>
+    <%= link_to image_tag("france.png", size:"90"), root_path(language: "Francês") %>
   </div>
 </div>
 
+  <div class="container">
+    <div class="cards d-flex flex-row flex-wrap">
+      <% @books.each do |book| %>
+        <div class="one-card d-flex flex-sm-column ">
+          <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad if book.photo.attached? %>
+          <%= link_to book.title, book_path(book), class:"text-card" %>
+        </div>
+      <% end %>
+    </div>
+  </div>

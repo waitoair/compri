@@ -1,0 +1,30 @@
+.cards{
+  display: flex;
+  justify-content: space-around;
+  margin: 15px;
+  padding:15px;
+  
+}
+
+.one-card{
+  // border: solid;
+  padding:15px;
+  border: 1px solid #00916E;
+  border-radius:2px;
+  box-shadow: 0 0 1em #bbbbbb;
+}
+
+.text-card{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin:5px;
+  font-weight: bold;
+}
+
+.text-card:hover{
+  text-decoration: none;
+  color: #DE541E;
+}
