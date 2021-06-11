@@ -28,8 +28,8 @@
 <div class="container my-5">
   <% @book.deals.order(:price).each do |deal| %>
   <div class="card-product row">
-    <%= cl_image_tag @book.photo.key, height: 200, width: 200, crop: :fit, class:"photo-deal" if @book.photo.attached? %>
-    <img src="http://gsobmidia.com.br/uploads/lojas/1289/americanas_1604512856.png" class="col-md-2">
+    <%= cl_image_tag @book.photo.key, height: 200, width: 200, crop: :pad, class:"photo-deal" if @book.photo.attached? %>
+    <%= cl_image_tag deal.photo.key, height: 200, width: 200, crop: :fit, class: "col-md-2" if deal.photo.attached? %>
 <!------- TEXTO DO CARD ------>
     <div class="card-product-infos col-md-4 ">
       <h4> <%= "$ #{deal.price}" %> </h4>

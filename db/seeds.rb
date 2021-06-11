@@ -3,10 +3,12 @@ puts "Creating..."
 User.destroy_all
 Deal.destroy_all
 Book.destroy_all
-# testing
-User.create!(email:"teste4@teste.com", password: "123456")
 
-store_names = ["amazon", "saraiva", "cultura", "leitura", "travessa", "submarino", "americanas"]
+User.create!(email:"teste@teste.com", password: "123456")
+
+store_names = ["Amazon", "Saraiva", "Cultura", "Livraria Travessa", "Submarino", "Lojas Americanas"]
+store_images = ["https://res.cloudinary.com/laralprb/image/upload/v1623421203/compri_mao/amazon.png", "https://logospng.org/download/saraiva/logo-saraiva-512.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421239/compri_mao/livraria_cultura.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421222/compri_mao/travessa.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421266/compri_mao/submarinos.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421189/compri_mao/americanas.png"]
+
 
 book_1 = Book.create!(title: "O morro dos ventos uivantes", author: "Emily Bronte", language: "Portuguese", description: "Único romance da escritora inglesa Emily Bronte, O morro dos ventos uivantes retrata uma trágica historia de amor e obsessão em que os personagens principais são a obstinada e geniosa Catherine Earnshaw e seu irmão adotivo, Heathcliff. Grosseiro, humilhado e rejeitado, ele guarda apenas rancor no coração, mas tem com Catherine um relaciona- mento marcado por amor e, ao mesmo tempo, ódio. Essa ligação perdura mesmo com o casamento de Catherine com Edgar Linton.")
 file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/compri_mao/book1.jpg')
@@ -82,29 +84,29 @@ file_13 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623339828
 book_13.photo.attach(io: file_13, filename: 'book13.jpg', content_type: 'image/jpg')
 
 
-book_14 = Book.create!(title: "Venced Al Corsario", author: "Juan Antonio Perez-Foncea", language: "Espanhol", description: "En la historia de España hay abundantes lagunas y sucesos por desentrañar. Mucho se ha escrito sobre el supuesto desastre de la conocida como Armada Invencible, cuando en realidad hubo otra flota, en este caso británica, que sí fracasó estrepitosamente en su asalto a las costas españolas, allá por 1589. Ese fiasco llevó a Isabel I de Inglaterra a castigar al corsario Drake, responsable de la derrota, con la prohibición de embarcar durante varios años. Sin embargo, Drake ideó durante ese tiempo un ambicioso plan destinado a ganar la guerra a España y acabar al fin con su dominio en América.")
+book_14 = Book.create!(title: "Venced Al Corsario", author: "Juan Antonio Perez-Foncea", language: "Español", description: "En la historia de España hay abundantes lagunas y sucesos por desentrañar. Mucho se ha escrito sobre el supuesto desastre de la conocida como Armada Invencible, cuando en realidad hubo otra flota, en este caso británica, que sí fracasó estrepitosamente en su asalto a las costas españolas, allá por 1589. Ese fiasco llevó a Isabel I de Inglaterra a castigar al corsario Drake, responsable de la derrota, con la prohibición de embarcar durante varios años. Sin embargo, Drake ideó durante ese tiempo un ambicioso plan destinado a ganar la guerra a España y acabar al fin con su dominio en América.")
 file_14 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623339976/compri_mao/book14.jpg')
 book_14.photo.attach(io: file_14, filename: 'book14.jpg', content_type: 'image/jpg')
 
 
-book_15 = Book.create!(title: "Relato de un náufrago", author: "Gabriel García Márquez", language: "Espanhol", description: "Con este libro, Gabriel García Márquez se descubrió a sí mismo como un narrador. Sin embargo, la intención primera era escribir un reportaje sobre un hombre, Luis Alejandro Velasco, que estuvo diez días a la deriva en una balsa mecida por el mar Caribe. El futuro Nobel de Literatura y entonces joven reportero que era García Márquez escuchó el relato de los hechos de boca de su protagonista y los transformó, tal vez sin pretenderlo, en un prodigioso ejercicio literario, una narración escueta y vigorosa donde late el pulso de un gran escritor. La publicación por entregas del reportaje en El Espectador de Bogotá supuso un alboroto político considerable -se revelaba la existencia de contrabando ilegal en un buque de la Armada colombiana, lo que costó la vida de siete marineros y el naufragio, más afortunado, de Velasco- y el exilio para su autor.")
+book_15 = Book.create!(title: "Relato de un náufrago", author: "Gabriel García Márquez", language: "Español", description: "Con este libro, Gabriel García Márquez se descubrió a sí mismo como un narrador. Sin embargo, la intención primera era escribir un reportaje sobre un hombre, Luis Alejandro Velasco, que estuvo diez días a la deriva en una balsa mecida por el mar Caribe. El futuro Nobel de Literatura y entonces joven reportero que era García Márquez escuchó el relato de los hechos de boca de su protagonista y los transformó, tal vez sin pretenderlo, en un prodigioso ejercicio literario, una narración escueta y vigorosa donde late el pulso de un gran escritor. La publicación por entregas del reportaje en El Espectador de Bogotá supuso un alboroto político considerable -se revelaba la existencia de contrabando ilegal en un buque de la Armada colombiana, lo que costó la vida de siete marineros y el naufragio, más afortunado, de Velasco- y el exilio para su autor.")
 file_15 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623340129/compri_mao/book15.jpg')
 book_15.photo.attach(io: file_15, filename: 'book15.jpg', content_type: 'image/jpg')
 
 
-book_16 = Book.create!(title: "La ciudad y los perros", author: "Mario Vargas Llosa", language: "Espanhol", description: "En 1962, La ciudad y los perros recibía el Premio Biblioteca Breve y unos meses más tarde era publicada tras sortear la censura franquista. Así comenzaba la andadura literaria de esta obra con la que Mario Vargas Llosa alcanzó el reconocimiento internacional y que hoy considerada una de las mejores novelas en español del siglo xx. La ciudad y los perros no es solamente una diatriba contra la brutalidad, sino también es un ataque frontal al concepto erróneo de virilidad y a una educación castrense mal entendida. A lo largo de las páginas de esta extraordinaria novela, la vehemencia y la pasión de la juventud se desbocan hasta llegar a una furia, una rabia y un fanatismo que anulan toda sensibilidad.")
+book_16 = Book.create!(title: "La ciudad y los perros", author: "Mario Vargas Llosa", language: "Español", description: "En 1962, La ciudad y los perros recibía el Premio Biblioteca Breve y unos meses más tarde era publicada tras sortear la censura franquista. Así comenzaba la andadura literaria de esta obra con la que Mario Vargas Llosa alcanzó el reconocimiento internacional y que hoy considerada una de las mejores novelas en español del siglo xx. La ciudad y los perros no es solamente una diatriba contra la brutalidad, sino también es un ataque frontal al concepto erróneo de virilidad y a una educación castrense mal entendida. A lo largo de las páginas de esta extraordinaria novela, la vehemencia y la pasión de la juventud se desbocan hasta llegar a una furia, una rabia y un fanatismo que anulan toda sensibilidad.")
 file_16 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623340353/compri_mao/book16.jpg')
 book_16.photo.attach(io: file_16, filename: 'book16.jpg', content_type: 'image/jpg')
 
 
-book_17 = Book.create!(title: "O Príncipe da Névoa", author: "Carlos Ruiz Zafón", language: "Espanhol", description: "Em 1943, a família do jovem Max Carver muda-se para um vilarejo no litoral, por decisão do pai, um relojoeiro e inventor. Porém, a nova casa dos Carver está cercada de mistérios. Atrás do imóvel, Max descobre um jardim abandonado, contendo uma estranha estátua e símbolos desconhecidos.
+book_17 = Book.create!(title: "O Príncipe da Névoa", author: "Carlos Ruiz Zafón", language: "Español", description: "Em 1943, a família do jovem Max Carver muda-se para um vilarejo no litoral, por decisão do pai, um relojoeiro e inventor. Porém, a nova casa dos Carver está cercada de mistérios. Atrás do imóvel, Max descobre um jardim abandonado, contendo uma estranha estátua e símbolos desconhecidos.
 Os novos moradores se sentem cada vez mais ansiosos: a irmã de Max, Alicia, tem sonhos perturbadores, enquanto a outra irmã, Irina, ouve vozes que sussurram para ela de um velho armário. Com a ajuda de Roland, um novo amigo, Max também descobre os restos de um barco que afundou há muitos anos, numa terrível tempestade. Todos a bordo morreram na ocasião, menos um homem - um engenheiro que construiu o farol no fim da praia.
 Enquanto os adolescentes exploram o naufrágio, investigam os mistérios e vivem um primeiro amor, um diabólico personagem surge na trama. Trata-se do Príncipe da Névoa, um ser capaz de conceder desejos a uma pessoa, ainda que, em troca, cobre um preço demasiadamente alto.")
 file_17 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623340414/compri_mao/book17.jpg')
 book_17.photo.attach(io: file_17, filename: 'book17.jpg', content_type: 'image/jpg')
 
 
-book_18 = Book.create!(title: "La Celestina", author: "Fernando de Rojas", language: "Espanhol", description: "La Celestina es una magnífica historia a la cual también se le conoce como Tragicomedia de Calisto y Melibea, obra de Fernando de Rojas, escritor español que se halló entre la Edad Media y el Renacimiento, uniendo en sus escritos estas etapas tan convulsas de la historia. Se dice que tuvo cierto apoyo de una mano misteriosa al agregarle cinco actos más a este relato, pero aun así sigue siendo un gran clásico.
+book_18 = Book.create!(title: "La Celestina", author: "Fernando de Rojas", language: "Español", description: "La Celestina es una magnífica historia a la cual también se le conoce como Tragicomedia de Calisto y Melibea, obra de Fernando de Rojas, escritor español que se halló entre la Edad Media y el Renacimiento, uniendo en sus escritos estas etapas tan convulsas de la historia. Se dice que tuvo cierto apoyo de una mano misteriosa al agregarle cinco actos más a este relato, pero aun así sigue siendo un gran clásico.
 La historia cuenta los amores ilícitos de los jóvenes Calisto y Melibea, quienes son auxiliados por Celestina, una vieja alcahueta que también es ayudada por una vasta corte de criados para alcanzar la dicha de los muchachos.")
 file_18 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623340489/compri_mao/book18.jpg')
 book_18.photo.attach(io: file_18, filename: 'book18.jpg', content_type: 'image/jpg')
@@ -133,8 +135,14 @@ book_22.photo.attach(io: file_22, filename: 'book22.jpg', content_type: 'image/j
 
 
 Book.all.each do |book|
-  rand(3..7).times do 
-    Deal.create!(store: store_names.sample, book: book, price: rand(14.9..62.5).round(2) )
+  rand(3..7).times do
+    index = rand(0..store_names.count - 1)
+    store = store_names[index]
+    image = store_images[index]
+    deal = Deal.create!(store: store, book: book, price: rand(14.9..62.5).round(2) )
+    puts "criado o deal para a store #{store}"
+    file = URI.open(image)
+    deal.photo.attach(io: file, filename: "#{store}.jpg", content_type: 'image/jpg')
   end
 end
 
