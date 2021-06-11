@@ -2,3 +2,44 @@
   width: 50%;
   display: inline;
 }
+
+.card-text{
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  padding: 3px;
+}
+
+.card-title{
+  font-family: 'Staatliches', cursive; 
+  font-size:35px;
+  margin-top: 5px;
+}
+
+.card-product, .card-body{
+  border-radius: 2px;
+}
+
+.card-product-infos h4{
+  font-family: 'Staatliches', cursive; 
+}
+
+.card-product-infos p{
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.photo{
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-bottom: 100px;
+}
+
+.target{
+  padding: 15px ;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.photo-deal {
+  padding: 10px;
+}
