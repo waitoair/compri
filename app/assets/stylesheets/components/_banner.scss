@@ -6,7 +6,7 @@
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 20px;
-  border-radius: 5px;
+  border-radius: 2px;
   
 }
 
@@ -14,13 +14,14 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 45px;
   font-weight: bold;
   font-family: 'Staatliches', cursive;
+
 }
 
 .banner p {
-  font-size: 30px;
+  font-size:27px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -46,22 +47,23 @@
 }
 
 body{
-  background-color: white;
+  background-color:#eeebea;
 }
 
 form{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-red {
   border-radius: 5px;
-  background-color: #DE541E;
-  color: #FFFCE8;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #E64C6B;
+  color: #F5EFED;
+  font-family: 'Roboto', sans-serif;
+  margin:5px;
 }
 .btn-red:hover{
-  background-color:#FFFCE8;
-  color: #5FDD9D;
+  background-color:#74A57F;
+  color: #F5EFED;
   transition: 1s;
 }
 

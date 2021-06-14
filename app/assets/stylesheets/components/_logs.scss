@@ -6,54 +6,60 @@
 .form-login {
   margin: 50px;
   padding: 35px;
-  border-radius: 4px;
-  background-color:rgba($color: #00916E, $alpha: 1) ;
-  box-shadow: 0 0 1em #00916E;
+  border-radius: 2px;
+  background-color:rgba($color: #eeebea, $alpha: 1) ;
+  box-shadow: 0 0 1em #1C1D21;
 }
 
 .form-login h2{
   font-family: 'Staatliches', cursive;
   margin-top: 15px;
-  color:#FFFCE8;
+  color:#1C1D21;
 }
 
 .form-inputs{
   width: 300px;
   font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
-  font-style: bold;
-  color:#FFFCE8;
+  font-family: 'Roboto', sans-serif;  
+  color:#1C1D21;
 }
 
 .btn-log{
-  border-radius: 5px;
-  background-color: #FFFCE8;
-  color: #00916E;
-  font-family: 'Open Sans', sans-serif;
+  border-radius: 2px;
+  background-color: #74A57F;
+  color: #eeebea;
+  font-family: 'Roboto', sans-serif;
   margin-bottom:5px;
 }
 
 .btn-log:hover{
-  color: black;
+  background-color: #eeebea;
+  color: #1C1D21;
+  transition: 1s;
+
 }
 
 .btn-sign{
-  background-color:#DE541E;
+  background-color:#E64C6B;
   margin-bottom: 5px;
-  color: #FFFCE8;
-  border-radius: 5px;
+  color:#eeebea;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .btn-sign:hover{
   text-decoration: none;
-  color:black;
+  background-color: #eeebea;
+  transition: 1s;
+  color: #1C1D21;
 }
 
 .forgot{
-  color:#FFFCE8;
+  color: #1C1D21;
+  font-family: 'Roboto', sans-serif;;
   text-decoration: none;
 }
 .forgot:hover{
   text-decoration: none;
-  color: black;
+  color: #1C1D21;
 }
