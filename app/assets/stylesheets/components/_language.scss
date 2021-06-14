@@ -7,17 +7,15 @@
 }
 
 .one-card{
-  // border: solid;
+  background-color: white;
   padding:15px;
-  border: 1px solid #00916E;
-  border-radius:2px;
   box-shadow: 0 0 1em #bbbbbb;
+  margin:10px;
 }
 
 .text-card{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
-  color: black;
+  font-family: 'Roboto', sans-serif;  font-size: 15px;
+  color:#1C1D21;
   text-align: center;
   text-decoration: none;
   margin:5px;
@@ -26,5 +24,5 @@
 
 .text-card:hover{
   text-decoration: none;
-  color: #DE541E;
+  color: #E64C6B;
 }
