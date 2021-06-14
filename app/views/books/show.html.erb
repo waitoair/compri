@@ -14,10 +14,10 @@
         </div>
       </div>
 
-    <div class="col-md-3 px-5 my-5 target">
-      <% if current_user && current_user.watch_lists.where(book: @book).empty? || !current_user %>
+      <div class="col-md-3 px-5 my-5 target">
+        <% if current_user && current_user.watch_lists.where(book: @book).empty? || !current_user %>
           <%= simple_form_for [@book, @watch_list] do |f| %>
-            <b><%= f.input :target_price, label:"Price alert:", label_html: { class: 'target-form' } %></b>
+            <b><%= f.input :target_price, label:"Price alert:", label_html: { class: 'target-form' }, input_html: { min: '5.0' } %></b>
             <button type="submit" class="btn btn-red btn-target"> Add to list &#10084;</button>
           <% end %>
         <% end %>
@@ -25,19 +25,19 @@
     </div>
   </div>
 
-<div class="container my-5">
-  <% @book.deals.order(:price).each do |deal| %>
-  <div class="card-product row">
-    <%= cl_image_tag @book.photo.key, height: 200, width: 200, crop: :pad, class:"photo-deal" if @book.photo.attached? %>
+  <div class="container my-5">
+    <% @book.deals.order(:price).each do |deal| %>
+    <div class="card-product row">
+    <%# <%= cl_image_tag @book.photo.key, height: 200, width: 200, crop: :pad, class:"photo-deal" if @book.photo.attached? %>
     <%= cl_image_tag deal.photo.key, height: 200, width: 200, crop: :fit, class: "col-md-2" if deal.photo.attached? %>
-<!------- TEXTO DO CARD ------>
+    <!------- TEXTO DO CARD ------>
     <div class="card-product-infos col-md-4 ">
-      <h4> <%= "$ #{deal.price}" %> </h4>
-      <p><%= "#{deal.store}"%></p>
+      <%# <h4> <%= "$ #{deal.price}" %>
+      <%# <p><%= "#{deal.store}"%>
     </div>
     <!------ BOTÃO ------->
     <div class="col-md-2 d-flex align-center my-5 ml-auto">
-      <%= link_to "Store", root_path, class: "btn btn-red ", style: "text-decoration: none;" %>
+      <%= link_to "Store", deal.url, class: "btn btn-red ", style: "text-decoration: none;" %>
     </div>
   </div>
   <% end %>
