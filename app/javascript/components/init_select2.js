@@ -3,7 +3,7 @@ import 'select2';
 
 const initSelect2 = () => {
   $('.select2').select2({
-    placeholder: "Escolha um book",
+    placeholder: "Choose a Book",
     allowClear: true,
     theme: "bootstrap",
     width: "80%"
