@@ -11,7 +11,7 @@
 .navbar-brand {
   width: 40px;
   color: #eeebea;
-  font-family: 'Staatliches', cursive;
+   font-family: 'Staatliches', cursive;
   font-size: 40px;
 }
 
@@ -29,4 +29,8 @@
 .nav-link:hover{
   opacity: 0.8;
   color: #FFFCE8;
+}
+
+.dropdown-item{
+  font-family: 'Roboto', sans-serif;
 }
