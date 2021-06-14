@@ -1,21 +1,26 @@
- 
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);">
   <div class="container">
     <h1>Best prices</h1>
     <p>Your favorite book at the best stores at the lowest price.</p>
 
+
   <div class="container">
     <%=form_tag root_path, method: :get, class: "form-inline col-8" do %>
-      <%= text_field_tag :query,
+      <%#= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Search"
       %>
-      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0" %>
+      <%= select_tag "query", options_from_collection_for_select(
+        Book.all.order(:title), :title, :title, params[:query]), include_blank: true,
+        class: 'select2' %>
+      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0 mx-2" %>
     <% end %>
-  </div>
+    </div>
 
- 
+
+
 <div class="container">
   <p class="flag-title">Book language</p>
   <div class="flag">
