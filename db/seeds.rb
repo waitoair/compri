@@ -5,7 +5,6 @@ User.destroy_all
 Deal.destroy_all
 Book.destroy_all
 
-# this is tatchi's rescue branch
 
 User.create!(email:"teste@teste.com", password: "123456")
 
