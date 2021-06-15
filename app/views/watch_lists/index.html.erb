@@ -1,14 +1,16 @@
 <div class="container">
   <div class="align-items-center container-watch d-flex flex-column">
-      <% @watch_lists.each do |watch_list| %>
+      <% @watch_lists.each_with_index do |watch_list, index| %>
         <div class="row">
           <div class="watch-book text-center">
             <p class="target-book"><%= watch_list.book.title %></p>
             <p class="target-your">Your target: <%= watch_list.target_price %></p>
-            <%= link_to  "Delete", watch_list_path(watch_list), method: :delete, class:"btn btn-delete" %>
+            <button id="cbtn-<%=index%>" class="btn btn-danger sweet-delete" data-index="<%=index%>"> Delete <%= watch_list.book.title %></button>
+            <%= link_to "Delete", watch_list_path(watch_list), method: :delete, id: "delete-#{index}", class: "invisible" %>
             <hr />
           </div>
         </div>
       <% end %>
   </div>
 </div>
+
