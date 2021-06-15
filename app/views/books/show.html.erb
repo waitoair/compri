@@ -20,6 +20,8 @@
             <b><%= f.input :target_price, label:"Price alert:", label_html: { class: 'target-form' }, input_html: { min: '5.0' } %></b>
             <button type="submit" class="btn btn-red btn-target"> Add to list &#10084;</button>
           <% end %>
+          <% else %>
+          <p> The book is already on your watch list </p>
         <% end %>
       </div>
     </div>
