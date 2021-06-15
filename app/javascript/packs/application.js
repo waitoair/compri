@@ -29,6 +29,7 @@ require("channels")
 import "bootstrap";
 import swal from 'sweetalert';
 import { applySweetalert } from '../plugins/init_sweetalert';
+import { loadDynamicBannerText } from '../components/banner';
 
 // initSweetalert('.sweet-delete', {
 //   title: "Are you sure?",
@@ -49,4 +50,5 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
   applySweetalert();
+  loadDynamicBannerText();
 });
