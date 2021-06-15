@@ -17,7 +17,7 @@
 
 
 <div class="container">
-  <p class="flag-title">Book language</p>
+  <p class="flag-title">Choose by language</p>
   <div class="flag">
     <%= link_to image_tag("espanha.png", size:"90"), root_path(language: "Español") %>
     <%= link_to image_tag("brazil.png", size:"90"), root_path(language: "Portuguese") %>
@@ -28,7 +28,7 @@
 
 <div class="container">
   <div class="cards d-flex flex-row flex-wrap-reverse">
-    <% @books.each do |book| %>
+      <% @books.each do |book| %>
       <div class="one-card d-flex flex-sm-column ">
       <a href="<%=book_path(book)%>", style="text-align:center;">
         <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %></a>
