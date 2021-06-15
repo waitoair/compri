@@ -10,6 +10,11 @@
   // justify-content: space-between;
 }
 
+.card-product:hover {
+  width: 86%;
+  transition: 60ms;
+}
+
 .card-product img {
   height: 100%;
   width: 150px;
