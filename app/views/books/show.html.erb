@@ -28,10 +28,10 @@
   </div>
 </div>
 
-  <div class="container my-5">
-    <% @book.deals.order(:price).each do |deal| %>
-    <div class="card-product row">
-       <%= cl_image_tag deal.photo.key, height: 200, width: 200, crop: :fit, class: "col-md-2" if deal.photo.attached? %>
+<div class="container my-5">
+  <% @book.deals.order(:price).each do |deal| %>
+  <div class="card-product row">
+    <%= cl_image_tag deal.photo.key, height: 200, width: 200, crop: :fit, class: "col-md-3" if deal.photo.attached? %>
         <!------ BOTÃO ------->
     <div class="col-md-2 d-flex align-center my-5 ml-auto">
       <%= link_to "Store", deal.url, class: "btn btn-red ", style: "text-decoration: none;" %>
