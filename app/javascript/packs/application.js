@@ -11,7 +11,6 @@ require("channels")
 
 
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -27,20 +26,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import swal from 'sweetalert';
-import { applySweetalert } from '../plugins/init_sweetalert';
-
-// initSweetalert('.sweet-delete', {
-//   title: "Are you sure?",
-//   text: "This action cannot be reversed",
-//   icon: "warning"
-// }, (value) => {
-//   console.log(value)
-//   if (value) {
-//     const link = document.querySelector('#delete-link');
-//     link.click();
-//   };
-// });
 
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
@@ -48,5 +33,4 @@ import { initSelect2 } from '../components/init_select2';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
-  applySweetalert();
 });
