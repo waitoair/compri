@@ -5,7 +5,9 @@
           <div class="watch-book text-center">
             <p class="target-book"><%= watch_list.book.title %></p>
             <p class="target-your">Your target: <%= watch_list.target_price %></p>
-            <button id="cbtn-<%=index%>" class="btn btn-danger sweet-delete" data-index="<%=index%>"> Delete <%= watch_list.book.title %></button>
+            <div class="botao ml-2">
+              <button id="cbtn-<%=index%>" class="btn btn-delete sweet-delete" data-index="<%=index%>"> Delete </button>
+            </div>
             <%= link_to "Delete", watch_list_path(watch_list), method: :delete, id: "delete-#{index}", class: "invisible" %>
             <hr />
           </div>
