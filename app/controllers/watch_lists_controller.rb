@@ -11,6 +11,8 @@ class WatchListsController < ApplicationController
       @watch_list.book = @book
       @watch_list.user = current_user
       if @watch_list.save
+        mail = WatchListMailer.with(watch_list: @watch_list).confirmation
+        mail.deliver_now
         redirect_to watchlist_path
       else
         render :new
