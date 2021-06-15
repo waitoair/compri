@@ -1,14 +1,11 @@
 <div class="container">
   <div class="card mt-5" style="width: 18rem;">
     <ul class="list-grouplist p-4">
-      <% @watch_lists.each_with_index do |watch_list, index| %>
+      <% @watch_lists.each do |watch_list| %>
       <ul class="pb-3">
           <li style="font-family: 'Staatliches', cursive; font-size: 25px;"><%= watch_list.book.title %></li>
-          <button id="cbtn-<%=index%>" class="btn btn-danger sweet-delete" data-index="<%=index%>"> Delete <%= watch_list.book.title %></button>
-          <%= link_to "Delete", watch_list_path(watch_list), method: :delete, id: "delete-#{index}", class: "invisible" %>
-        </ul>
+          <%= link_to  "Delete", watch_list_path(watch_list), method: :delete, class:"btn btn-red" %>
+      </ul>
       <% end %>
-     </ul>
   </div>
 </div>
-
