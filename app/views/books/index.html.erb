@@ -11,9 +11,9 @@
   <div class="container">
     <%=form_tag root_path, method: :get, class: "form-inline col-8 form-select" do %>
       <%= select_tag "query", options_from_collection_for_select(
-        Book.all.order(:title), :title, :title, params[:query]), include_blank: true,
+        Book.all.order(:title), :author, :title, params[:query]), include_blank: true,
         class: 'select2' %>
-      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0 mx-2" %>
+      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0 mx-2"  %>
     <% end %>
   </div>
 </div>
