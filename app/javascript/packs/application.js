@@ -45,6 +45,10 @@ import { applySweetalert } from '../plugins/init_sweetalert';
 // Internal imports, e.g:
 import { initSelect2 } from '../components/init_select2';
 
+document.addEventListener('turbolinks:before-cache', function () {
+  // removing the select2 from all selects
+  $(".select2").select2('destroy');
+});
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
