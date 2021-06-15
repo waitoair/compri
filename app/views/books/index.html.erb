@@ -30,9 +30,11 @@
   <div class="cards d-flex flex-row flex-wrap-reverse">
     <% @books.each do |book| %>
       <div class="one-card d-flex flex-sm-column ">
-        <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %>
+      <a href="<%=book_path(book)%>", style="text-align:center;">
+        <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %></a>
         <%= link_to book.title, book_path(book), class:"text-card" %>
       </div>
     <% end %>
   </div>
 </div>
+
