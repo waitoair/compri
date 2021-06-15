@@ -5,6 +5,7 @@ User.destroy_all
 Deal.destroy_all
 Book.destroy_all
 
+
 User.create!(email:"teste@teste.com", password: "123456")
 
 store_urls = ["https://www.amazon.com.br/s?k=", "https://busca.saraiva.com.br/busca?q=", "https://www3.livrariacultura.com.br/busca/?ft=", "https://www.travessa.com.br/Busca.aspx?d=1&cta=00&codtipoartigoexplosao=1&bt=","https://www.submarino.com.br/busca/", "https://www.americanas.com.br/busca/"]
