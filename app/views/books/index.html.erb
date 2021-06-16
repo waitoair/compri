@@ -1,43 +1,55 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);">
+<div class="container-home">
+  <div class="row">
+    <div class="col-xl-12 col-md-12 col-sm-12">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1532012197267-da84d127e765?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80);">
 
-  <div class="container">
-    <h1>Best prices</h1>
-    <p>
-      <span id="titulo"></span>
-    </p>
-  </div>
+        <div class="container">
+          <h1>Best prices</h1>
+          <p>
+            <span id="titulo"></span>
+          </p>
+        </div>
+    
 
 
-  <div class="container">
-    <%=form_tag root_path, method: :get, class: "form-inline col-8 form-select" do %>
-      <%= select_tag "query", options_from_collection_for_select(
-        Book.all.order(:title), :author, :title, params[:query]), include_blank: true,
-        class: 'select2' %>
-      <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0 mx-2"  %>
-    <% end %>
+        <div class="container">
+          <%=form_tag root_path, method: :get, class: "form-inline col-8 form-select" do %>
+            <%= select_tag "query", options_from_collection_for_select(
+              Book.all.order(:title), :author, :title, params[:query]), include_blank: true,
+              class: 'select2' %>
+            <%= submit_tag "Search", class: "btn btn-red my-2 my-sm-0 mx-2"  %>
+          <% end %>
+        </div>
+      </div>  
+    </div>
   </div>
 </div>
 
 
 <div class="container">
-  <p class="flag-title">Choose by language</p>
-  <div class="flag">
-    <%= link_to image_tag("espanha.png", size:"90"), root_path(language: "Español") %>
-    <%= link_to image_tag("brazil.png", size:"90"), root_path(language: "Portuguese") %>
-    <%= link_to image_tag("united-states.png", size:"90"), root_path(language: "English") %>
-    <%= link_to image_tag("france.png", size:"90"), root_path(language: "Francês") %>
-  </div>
-</div>
-
-<div class="container">
-  <div class="cards d-flex flex-row flex-wrap-reverse">
-      <% @books.each do |book| %>
-      <div class="one-card d-flex flex-sm-column ">
-      <a href="<%=book_path(book)%>", style="text-align:center;">
-        <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %></a>
-        <%= link_to book.title, book_path(book), class:"text-card" %>
+  <div class="row">
+    <div class="col-xl-12 col-md-12 col-sm-6">
+      <p class="flag-title">Choose by language</p>
+      <div class="flag">
+        <%= link_to image_tag("espanha.png", size:"90"), root_path(language: "Español") %>
+        <%= link_to image_tag("brazil.png", size:"90"), root_path(language: "Portuguese") %>
+        <%= link_to image_tag("united-states.png", size:"90"), root_path(language: "English") %>
+        <%= link_to image_tag("france.png", size:"90"), root_path(language: "Francês") %>
       </div>
-    <% end %>
+    
+
+      <div class="container">
+        <div class="cards d-flex flex-row flex-wrap-reverse">
+            <% @books.each do |book| %>
+            <div class="one-card d-flex flex-sm-column ">
+            <a href="<%=book_path(book)%>", style="text-align:center;">
+              <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %></a>
+              <%= link_to book.title, book_path(book), class:"text-card" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
