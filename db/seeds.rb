@@ -143,7 +143,7 @@ Book.all.each do |book|
     store = store_names[index]
     image = store_images[index]
     url = store_urls[index] + book.title
-    deal = Deal.create!(store: store, book: book, price: rand(14.9..62.5).round(2), url: url )
+    deal = Deal.create!(store: store, book: book, price: rand(12.90..25.70).round(2), url: url )
     puts "criado o deal para a store #{store}"
     file = URI.open(image)
     deal.photo.attach(io: file, filename: "#{store}.jpg", content_type: 'image/jpg')
