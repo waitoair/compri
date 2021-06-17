@@ -19,16 +19,6 @@ file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/
 book_1.photo.attach(io: file_1, filename: 'book1.jpg', content_type: 'image/jpg')
 
 
-book_2 = Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese", description: "Chegou a noite. O extraordinário que arrepia. O estranho que nos arrebata. A imaginação que nos assombra. Essas são algumas das sensações que podemos sentir – e apenas tentar explicar em palavras – ao ler autores como Edgar Allan Poe, H.P. Lovecraft e Sir Arthur Conan Doyle, pela primeira vez reunidos neste box exclusivo.")
-file_2 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338681/compri_mao/book2.jpg')
-book_2.photo.attach(io: file_2, filename: 'book2.jpg', content_type: 'image/jpg')
-
-
-book_3 = Book.create!(title: "A Revolução Dos Bichos", author: "George Orwell", language: "Portuguese", description: " A revolução dos bichos é uma história intrigante e provocativa em que, numa primeira leitura, ressalta a fábula, caracterizada por ser um tipo de narrativa protagonizada geralmente por animais, mas que reflete ações humanas com algum ensinamento de cunho moral. No entanto, quando avançamos na história de George Orwell, percebemos que também é uma sátira política que critica tanto a corrupção dos governantes.")
-file_3 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338750/compri_mao/book3.jpg')
-book_3.photo.attach(io: file_3, filename: 'book3.jpg', content_type: 'image/jpg')
-
-
 book_4 = Book.create!(title: "Drácula", author: "Bram Stoker", language: "Portuguese", description: "Obra-prima de Bram Stoker, Drácula narra o assustador confronto entre o vampiro mais famoso da literatura, apoiado por sua legião crescente de mortos-vivos, e um grupo decidido a aniquilá-lo, liderado por Jonathan e Mina Harker e o médico holandês Van Helsing.")
 file_4 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623339396/compri_mao/book4.jpg')
 book_4.photo.attach(io: file_4, filename: 'book4.jpg', content_type: 'image/jpg')
