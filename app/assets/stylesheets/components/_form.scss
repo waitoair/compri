@@ -2,21 +2,26 @@
   font-family: 'Roboto', sans-serif;
   text-align: justify;
   // padding: 3px;
-  
+
 }
 
 .card-title{
-  font-family: 'Staatliches', cursive; 
+  font-family: 'Staatliches', cursive;
   font-size:35px;
   // margin-top: 5px;
 }
+.color-price{
+font-family:'Roboto', sans-serif;
+font-size:15px;
+color: black;
+}
 
 .card-product, .card-body{
-  border-radius: 2px;
+  border-radius: 10px;
   }
 
 .card-product-infos h4{
-  font-family: 'Staatliches', cursive; 
+  font-family: 'Staatliches', cursive;
 }
 
 .card-product-infos p{

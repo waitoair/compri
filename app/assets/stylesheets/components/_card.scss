@@ -3,7 +3,11 @@
   // height: 120px;
   width: 80%;
   background: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1) ;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 50px;
+}
+.card {
+  border-radius: 10px;
 }
 
 .card-product:hover {
@@ -15,6 +19,8 @@
   height: 100%;
   width: 150px;
   object-fit: cover;
+
+
 }
 
 .card-product h2 {
