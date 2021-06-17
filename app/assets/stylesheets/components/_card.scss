@@ -1,13 +1,9 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  // height: 120px;
   width: 80%;
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1) ;
-  // display: flex;
-  // align-items: center;
-  margin-bottom: 5px;
-  // justify-content: space-between;
 }
 
 .card-product:hover {
@@ -27,27 +23,9 @@
   margin: 0;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  // margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  // margin-botton: 16px;
-  // display: flex;
-  justify-items: center;
-}
-
 .card-product-infos {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.row {
-  margin: 5px auto;
 }
