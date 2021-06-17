@@ -18,7 +18,7 @@ class WatchListsController < ApplicationController
         render :new
       end
     else
-      redirect_to @book, notice: "Book already add"
+      redirect_to @book, notice: "Book already added"
     end
   end
 

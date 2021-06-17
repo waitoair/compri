@@ -39,17 +39,21 @@
     
 
       <div class="container">
-        <div class="cards d-flex flex-row">
+        <div class="cards d-flex flex-wrap flex-row">
             <% @books.each do |book| %>
-            <div class="one-card d-flex flex-sm-column ">
-            <a href="<%=book_path(book)%>", style="text-align:center;">
-              <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %></a>
-              <%= link_to book.title, book_path(book), class:"text-card" %>
-            </div>
+            <%= link_to book_path(book), class:"text-decoration-none" do %>
+              <div class="one-card d-flex flex-sm-column row justify-content-center">
+              <div class="col-12 text-center">
+                  <%= cl_image_tag book.photo.key, height: 150, width: 150, crop: :pad, class: "mx-auto" if book.photo.attached? %>
+                </div>
+                <div class="col-12 text-center">
+                  <span class="text-card"> <%= book.title %> </span>
+                </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
