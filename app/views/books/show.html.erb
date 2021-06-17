@@ -29,14 +29,14 @@
 </div>
 
 <div class="container my-5">
-  <% @book.deals.order(:price).each do |deal| %> 
+  <% @book.deals.order(:price).each do |deal| %>
     <%= link_to deal.url, target: "_blank", style: "text-decoration: none;" do %>
       <div class="card-product row d-flex flex-nowrap align-items-center my-3 col-12 mx-auto" >
         <div class="col-md-3 col-5">
           <%= cl_image_tag deal.photo.key, height: 200, width: 200, crop: :fit, class:"img-fluid" if deal.photo.attached? %>
         </div>
         <div class="col-8 col-md-5 row d-flex align-items-center">
-          <span style="font-family: 'Roboto', sans-serif; font-size:15px;">starting price $ <%= deal.price %> </span>
+          <span class="color-price" >starting price $ <%= deal.price %> </span>
         </div>
         <!------ BOTÃO ------->
         <div class="col-1 col-md-4 d-flex flex-shrink-1 my-5 align-items-center justify-content-end">
