@@ -14,9 +14,14 @@ store_names = ["Amazon", "Saraiva", "Cultura", "Livraria Travessa", "Submarino",
 store_images = ["https://res.cloudinary.com/laralprb/image/upload/v1623421203/compri_mao/amazon.png", "https://logospng.org/download/saraiva/logo-saraiva-512.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421239/compri_mao/livraria_cultura.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421222/compri_mao/travessa.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421266/compri_mao/submarinos.png", "https://res.cloudinary.com/laralprb/image/upload/v1623421189/compri_mao/americanas.png"]
 
 
-book_1 = Book.create!(title: "O morro dos ventos uivantes", author: "Emily Bronte", language: "Portuguese", description: "Único romance da escritora inglesa Emily Bronte, O morro dos ventos uivantes retrata uma trágica historia de amor e obsessão em que os personagens principais são a obstinada e geniosa Catherine Earnshaw e seu irmão adotivo, Heathcliff. Grosseiro, humilhado e rejeitado, ele guarda apenas rancor no coração, mas tem com Catherine um relacionamento marcado por amor e, ao mesmo tempo, ódio.")
-file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/compri_mao/book1.jpg')
-book_1.photo.attach(io: file_1, filename: 'book1.jpg', content_type: 'image/jpg')
+# book_1 = Book.create!(title: "O morro dos ventos uivantes", author: "Emily Bronte", language: "Portuguese", description: "Único romance da escritora inglesa Emily Bronte, O morro dos ventos uivantes retrata uma trágica historia de amor e obsessão em que os personagens principais são a obstinada e geniosa Catherine Earnshaw e seu irmão adotivo, Heathcliff. Grosseiro, humilhado e rejeitado, ele guarda apenas rancor no coração, mas tem com Catherine um relacionamento marcado por amor e, ao mesmo tempo, ódio.")
+# file_1 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338620/compri_mao/book1.jpg')
+# book_1.photo.attach(io: file_1, filename: 'book1.jpg', content_type: 'image/jpg')
+
+
+book_2 = Book.create!(title: "Histórias Primordiais", author: "Edgar Allan Poe", language: "Portuguese", description: "Chegou a noite. O extraordinário que arrepia. O estranho que nos arrebata. A imaginação que nos assombra. Essas são algumas das sensações que podemos sentir – e apenas tentar explicar em palavras – ao ler autores como Edgar Allan Poe, H.P. Lovecraft e Sir Arthur Conan Doyle, pela primeira vez reunidos neste box exclusivo.")
+file_2 = URI.open('https://res.cloudinary.com/laralprb/image/upload/v1623338681/compri_mao/book2.jpg')
+book_2.photo.attach(io: file_2, filename: 'book2.jpg', content_type: 'image/jpg')
 
 
 book_4 = Book.create!(title: "Drácula", author: "Bram Stoker", language: "Portuguese", description: "Obra-prima de Bram Stoker, Drácula narra o assustador confronto entre o vampiro mais famoso da literatura, apoiado por sua legião crescente de mortos-vivos, e um grupo decidido a aniquilá-lo, liderado por Jonathan e Mina Harker e o médico holandês Van Helsing.")
